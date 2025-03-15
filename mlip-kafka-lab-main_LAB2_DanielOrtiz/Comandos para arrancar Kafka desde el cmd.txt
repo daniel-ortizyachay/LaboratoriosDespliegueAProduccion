@@ -1,0 +1,9 @@
+Se debe abrir cmd en la carpeta que fue instalado Kafka:
+En mi Caso C:/kafka
+Para arrancar Zookeeper:
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+Se abre otro cmd en la misma direccion, se arranca el servidor:
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
