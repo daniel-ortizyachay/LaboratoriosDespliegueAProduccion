@@ -1,0 +1,20 @@
+# Use a lightweight Python image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install curl
+RUN apt-get update && apt-get install -y curl && apt-get clean
+
+# Copy the app file
+COPY load_balancer.py /app
+
+# Install Flask and requests
+RUN pip install Flask requests
+
+# Expose the application port
+EXPOSE 5000
+
+# Run the load balancer app
+CMD ["python", "load_balancer.py"]
